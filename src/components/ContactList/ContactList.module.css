@@ -7,6 +7,6 @@
 }
 
 .item {
-  max-width: 250px;
+  min-width: 300px;
   list-style: none;
 }
