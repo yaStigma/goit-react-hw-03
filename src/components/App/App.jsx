@@ -6,13 +6,21 @@ import { useState } from "react";
 
 export default function App() {
 const [contacts, setContacts] = useState (initialContact);
+const [filter, setFilter] = useState ("");
+
+const visibleContacts = contacts.filter((contact) => 
+  contact.name.toLowerCase().includes(filter.toLowerCase()));
+
+
+
+
 
   return (
 <div>
 <h1>Phonebook</h1>
 <ContactForm/> 
-{/* <SearchBox/> */}
-<ContactList contacts={contacts}/>
+<SearchBox value={filter} onFilter={setFilter}/>
+<ContactList contacts={visibleContacts}/>
 </div>
 
 
